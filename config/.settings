@@ -1,0 +1,17 @@
+{
+    "projectName": "Tech Talk Demo Org",
+    "username": "ariany@salesforce.com.techtalks",
+    "id": "01ead720-4ef2-11e8-8df7-75beac80fe21",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://ariany-techtalks-dev-ed.my.salesforce.com",
+    "workspace": "/Users/ayousefi/Documents/sublime_workspace",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+  <aura:handler name="myComponentEvent" event="c:TT_ComponentEvent" phase="capture" action="{!c.handleMyComponentEvent}"/>
+  <aura:attribute name="capturedEvent" type="String"/> 
+    
+  <lightning:card iconName="action:edit" title="Component Event Demo">
+    <div class="slds-p-horizontal--small">
+      <div class="slds-text-heading_small">
+        <p>Component A</p>
+      </div>
+      
+      <br/>
+
+      <p>{!v.capturedEvent}</p>
+
+      <br/>
+
+      <div class="slds-box">
+        <c:TT_ComponentB />
+      </div>
+
+      <br/>
+
+      <div class="slds-box">
+        <c:TT_ComponentC />
+      </div>
+
+      <br/>
+
+      <div class="slds-box">
+        <c:TT_ComponentD />
+      </div>
+      
+      <br/>
+    </div>
+  </lightning:card>
+</aura:component>

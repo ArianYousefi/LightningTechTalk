@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+
+    <c:TT_StatusPicker />
+    
+	<!--Path-->
+	<div class="slds-p-top_xx-small">
+		<c:TT_Path_EventDriven />
+	</div>
+</aura:component>

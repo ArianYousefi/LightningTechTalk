@@ -1,0 +1,13 @@
+<aura:component >
+    <div class="slds-text-heading_small">
+   		<p>Child Component</p>
+    </div>
+   <aura:attribute name="childAttribute" type="String"/> 
+   <aura:attribute name="oldValue" type="String"/> 
+   <aura:attribute name="currentValue" type="String"/> 
+   <aura:handler name="change" value="{!v.childAttribute}" action="{!c.onChildAttributeChange}"/>
+    <br/>
+    <p>Old Value: {!v.oldValue}</p>
+    <br/>
+    <p>Current Value: {!v.currentValue}</p>
+</aura:component>

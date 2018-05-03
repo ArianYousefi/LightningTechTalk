@@ -1,0 +1,11 @@
+<aura:component >
+	<aura:handler name="myComponentEvent" event="c:TT_ComponentEvent" action="{!c.handleMyComponentEvent}"/>
+    <aura:attribute name="capturedEvent" type="String"/> 
+	<p>Component B</p>
+
+    <br/>
+
+	<p>{!v.capturedEvent}</p>
+	
+	<br/>
+</aura:component>

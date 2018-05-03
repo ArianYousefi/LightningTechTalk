@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="parentAttribute" type="String"/>
+
+    <lightning:card iconName="action:edit" title="Passing data down the component hierarchy">
+       <div class="slds-p-horizontal--small">
+           <div class="slds-text-heading_small">
+    		<p>Parent Component</p>
+           </div>
+           <br/>
+   <lightning:select aura:id="parent" label="Parent Attribute" value="{!v.parentAttribute}">
+                	<option value="">--None--</option>
+                	<option value="Hot">Hot</option>
+                	<option value="Warm">Warm</option>
+                	<option value="Cold">Cold</option>
+    </lightning:select>
+    	<br/>
+           <div class="slds-box">
+   		<c:TT_PassDownValueChangeChild childAttribute="{!v.parentAttribute}"/>
+           </div>
+        </div>
+    </lightning:card>
+</aura:component>

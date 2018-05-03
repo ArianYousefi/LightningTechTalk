@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global">
+
+	<!--Attributes-->
+	<aura:attribute name="items" type="Object[]" access="public"/>
+    <aura:attribute name="activeItem" type="Object" access="public"/>
+
+    <aura:attribute name="status" type="String" default="open"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:handler name="change" value="{!v.status}" action="{!c.handleChange}"/>
+    <lightning:select aura:id="select" name="select" label="Opportunity Status" value="{!v.status}">
+		<aura:iteration items="{!v.items}" var="item">
+            <option text="{!item.name}" value="{!item.value}" selected="{!item.selected}"/>
+        </aura:iteration>
+
+    </lightning:select>
+    
+	<!--Path-->
+	<div class="slds-p-top_xx-small">
+		<c:TT_Path data="{!v.items}" selectedItem="{!v.activeItem}"/>
+	</div>
+</aura:component>

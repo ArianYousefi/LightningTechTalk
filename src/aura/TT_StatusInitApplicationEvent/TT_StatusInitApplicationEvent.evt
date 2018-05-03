@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event to communicate on Status Change">
+	<aura:attribute name="activeItem" type="Object"/>
+	<aura:attribute name="items" type="Object[]"/>
+</aura:event>

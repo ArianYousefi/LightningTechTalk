@@ -1,0 +1,33 @@
+<aura:component >
+
+	<!-- Conditional Expressions: https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/expr_functions.htm -->
+
+	<!--Attributes-->
+    <aura:attribute name="data" type="Object[]" access="public"/>
+    <aura:attribute name="selectedItem" type="Object" access="public"/>
+
+	<!--Content-->
+	<div class="slds-path">
+		<div class="slds-grid slds-path__track">
+			<div class="slds-grid slds-path__scroller-container">
+				<div class="slds-path__scroller" role="application">
+					<div class="slds-path__scroller_inner">
+						<ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+							<aura:iteration items="{!v.data}" var="item">
+								<li class="{!'slds-path__item '+if(equals(item.id,v.selectedItem.id),'slds-is-current slds-is-active',if(lessthan(item.sequence,v.selectedItem.sequence) ,'slds-is-complete','slds-is-incomplete'))}" role="presentation">
+									<a aria-selected="true" class="slds-path__link" href="javascript:void(0);" role="option">
+										<span class="slds-path__stage">
+											<lightning:icon iconName="utility:check" size="small"/>
+					                  	</span>
+										<span class="slds-path__title">{!item.name}</span>
+									</a>
+								</li>
+							</aura:iteration>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</aura:component>

@@ -1,0 +1,17 @@
+<aura:component >
+
+    <!--Registered Events-->
+	<aura:handler event="c:TT_StatusInitApplicationEvent" action="{!c.setAttributes}"/>
+
+	<!--Attributes-->
+    <aura:attribute name="items" type="Object[]" access="public"/>
+    <aura:attribute name="status" type="String" default="open"/>
+
+    <aura:handler name="change" value="{!v.status}" action="{!c.handleChange}"/>
+    <lightning:select aura:id="select" name="select" label="Opportunity Status" value="{!v.status}">
+		<aura:iteration items="{!v.items}" var="item">
+            <option text="{!item.name}" value="{!item.value}" selected="{!item.selected}"/>
+        </aura:iteration>
+
+    </lightning:select>
+</aura:component>

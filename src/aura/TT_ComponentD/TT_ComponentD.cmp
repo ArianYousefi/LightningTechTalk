@@ -1,0 +1,23 @@
+<aura:component >
+  <aura:handler name="myComponentEvent" event="c:TT_ComponentEvent" phase="capture" action="{!c.handleMyComponentEvent}"/>
+  <aura:attribute name="capturedEvent" type="String"/> 
+
+	<lightning:card >
+    <div class="slds-p-horizontal--small">
+      <div class="slds-text-heading_small">
+        <p>Component D</p>
+      </div>
+
+      <br/>
+
+      <p>{!v.capturedEvent}</p>
+
+      <br/>
+
+      <div class="slds-box">
+        <c:TT_ComponentE />
+      </div>
+    </div>
+  </lightning:card>
+           
+</aura:component>
